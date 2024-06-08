@@ -1,0 +1,65 @@
+<form
+  class="flex justify-center items-center h-screen bg-cover bg-[url('/images/background.jpg')]"
+>
+  <div class="absolute inset-0 bg-gray-300 opacity-50"></div>
+  <div class="fixed top-4 left-4">
+    <img
+      src="/images/logo.jpg"
+      alt="Equipa_Tour_Logo"
+      class="hidden md:block"
+      width="250"
+    />
+    <img
+      src="/images/logo.jpg"
+      alt="Equipa_Tour_Logo"
+      class="block md:hidden"
+      width="120"
+    />
+  </div>
+  <div class="container relative mx-auto">
+    <div class="col-span-11 md:col-span-6 px-3">
+      <div class="bg-white rounded p-10 max-w-md mx-auto shadow-xl">
+        <h3 class="text-center font-bold pb-8">LOG IN</h3>
+        <div class="mb-8">
+          <div class="mb-3 flex flex-col">
+            <mat-label class="mb-2">Email</mat-label>
+            <input
+              matInput
+              formControlName="email"
+              type="email"
+              class="w-full p-2 rounded-md border"
+              placeholder="example@email.com"
+            />
+          </div>
+          <div class="mb-3 flex flex-col">
+            <mat-label class="mb-2">Password</mat-label>
+            <input
+              matInput
+              formControlName="password"
+              type="password"
+              class="w-full p-2 rounded-md border"
+              placeholder="Enter your password"
+            />
+          </div>
+        </div>
+        <div class="flex justify-center mb-6 w-full">
+          <button
+            type="submit"
+            class="w-full bg-color-1 rounded-md text-white py-2.5"
+            (click)="navigateTo('/home')"
+          >
+            Log In
+          </button>
+        </div>
+        <div class="flex justify-center">
+          <p>
+            Don't have an account?{{ " "
+            }}<a (click)="goToRegister()" class="font-medium cursor-pointer"
+              >Register here</a
+            >
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>

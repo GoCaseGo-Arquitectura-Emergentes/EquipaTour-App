@@ -1,0 +1,51 @@
+<div class="pt-20 sm:pl-48 md:pl-52 lg:pl-60 xl:pl-64">
+  <div class="flex justify-between items-center px-4 py-2 bg-white border-b">
+    <h1 class="text-xl font-bold">Dashboard</h1>
+    <div class="relative">
+      <button
+        class="text-black focus:outline-none flex items-center border p-2 rounded-lg bg-yellow-300"
+        (click)="toggleLuggageOptions()"
+      >
+        Equipaje Nº
+        <i class="material-icons">expand_more</i>
+      </button>
+      @if (showLuggageOptions) {
+      <div
+        class="absolute right-0 mt-2 w-48 bg-white border border-gray-300 rounded-md shadow-lg z-10"
+      >
+        <a class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+          >Equipaje 001</a
+        >
+        <a class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+          >Equipaje 002</a
+        >
+        <a class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+          >Equipaje 003</a
+        >
+      </div>
+      }
+    </div>
+  </div>
+
+  <div class="grid grid-cols-2 justify-between mt-4 w-full max-w-6xl mx-auto">
+    <div class="m-2 md:m-4">
+      <div class="bg-white p-4 border rounded-lg shadow-lg">
+        <h2 class="text-lg font-bold mb-2">Masa</h2>
+        <div class="flex items-center mb-2">
+          <i class="material-icons mr-2">balance</i>
+          <span class="text-2xl p-2 border">30.1 kg</span>
+        </div>
+        <div class="text-red-500 font-medium">Exceso de peso</div>
+      </div>
+    </div>
+    <div class="m-2 md:m-4">
+      <div class="bg-white p-4 border rounded-lg shadow-lg">
+        <h2 class="text-lg font-bold mb-2">Estado</h2>
+        <div class="flex items-center mb-2">
+          <span class="text-4xl" aria-label="Advertencia">⚠️</span>
+        </div>
+        <div class="text-red-500 font-medium">Movimientos fuertes</div>
+      </div>
+    </div>
+  </div>
+</div>
