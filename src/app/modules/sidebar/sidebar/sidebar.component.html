@@ -5,9 +5,32 @@
     <img src="/images/logo.jpg" alt="Logo" class="h-12 w-auto mr-4" />
   </div>
   <div class="flex items-center">
-    <button class="text-white focus:outline-none mr-4">
-      <i class="material-icons text-black">notifications</i>
-    </button>
+    <div class="relative">
+      <button
+        (click)="toggleNotifications()"
+        class="text-white focus:outline-none mr-4"
+      >
+        <i class="material-icons text-black">notifications</i>
+      </button>
+      @if (showNotifications) {
+      <div
+        class="absolute right-0 mt-2 w-64 bg-white border border-gray-300 rounded-md shadow-lg z-10"
+      >
+        @for (notification of notifications; track notification.title ) {
+        <div class="flex items-center px-4 py-2 border-b last:border-b-0">
+          <i class="material-icons mr-2">{{ notification.icon }}</i>
+          <div class="flex flex-col w-full">
+            <span class="font-semibold">{{ notification.title }}</span>
+            <span
+              class="text-sm text-gray-600 overflow-hidden whitespace-nowrap overflow-ellipsis w-[90%]"
+              >{{ notification.text }}</span
+            >
+          </div>
+        </div>
+        }
+      </div>
+      }
+    </div>
     <div class="relative" (click)="toggleProfileOptions()">
       <button class="text-white focus:outline-none">
         <img
@@ -16,6 +39,7 @@
           class="object-cover w-8 h-8 rounded-full"
         />
       </button>
+
       @if (showProfileOptions) {
       <div
         class="absolute right-0 mt-2 w-48 bg-white border border-gray-300 rounded-md shadow-lg z-10"
@@ -36,21 +60,25 @@
   </div>
 </div>
 
-<div class="fixed left-0 top-0 h-full w-64 bg-color-1 p-4 pt-20 z-30 font-bold">
+<div
+  class="fixed left-0 top-0 h-full sm:w-48 md:w-52 lg:w-60 xl:w-64 bg-color-1 p-4 pt-20 z-30 font-bold"
+>
   <ul class="space-y-4">
     <li>
       <a
         class="text-white hover:text-gray-400 cursor-pointer flex items-center"
         (click)="navigateTo('/home')"
-        ><i class="material-icons mr-2">home</i>Home</a
       >
+        <i class="material-icons mr-2">home</i>Dashboard
+      </a>
     </li>
     <li>
       <a
         class="text-white hover:text-gray-400 flex items-center cursor-pointer"
         (click)="navigateTo('/trainings')"
-        ><i class="material-icons mr-2">ondemand_video</i>Trainings</a
       >
+        <i class="material-icons mr-2">ondemand_video</i>Capacitaciones
+      </a>
     </li>
   </ul>
 </div>

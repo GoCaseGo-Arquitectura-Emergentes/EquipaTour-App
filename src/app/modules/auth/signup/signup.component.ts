@@ -18,4 +18,8 @@ export class SignupComponent {
   goToLogin() {
     this.router.navigate(['/login']);
   }
+
+  navigateTo(route: string) {
+    this.router.navigate([route]);
+  }
 }
