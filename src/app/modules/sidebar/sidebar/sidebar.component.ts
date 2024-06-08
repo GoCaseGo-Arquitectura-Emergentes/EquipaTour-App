@@ -14,9 +14,9 @@ export class SidebarComponent implements OnInit {
   showNotifications = false;
 
   notifications = [
-    { icon: 'info', title: 'Notificación 1', text: 'Texto de la notificación 1 que se cortará...' },
-    { icon: 'warning', title: 'Notificación 2', text: 'Texto de la notificación 2 que se cortará...' },
-    { icon: 'error', title: 'Notificación 3', text: 'Texto de la notificación 3 que se cortará...' },
+    { icon: 'info', title: 'Nuevo equipaje registrado', text: 'Texto de la notificación de información' },
+    { icon: 'warning', title: 'Movimientos bruscos', text: 'Texto de la notificación de advertencia' },
+    { icon: 'error', title: 'Problema de equipaje', text: 'Texto de la notificación de error' },
   ];
 
   constructor(private router: Router) {}
