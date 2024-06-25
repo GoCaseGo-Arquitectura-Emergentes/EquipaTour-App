@@ -18,7 +18,7 @@ export class AppComponent implements OnInit {
   ngOnInit() {
     this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
-        this.showSidebar = ['/home', '/trainings'].includes(event.url);
+        this.showSidebar = ['/home', '/trainings', "/tour-packages"].includes(event.url);
       }
     });
   }
