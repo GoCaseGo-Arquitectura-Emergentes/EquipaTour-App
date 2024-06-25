@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "public": "dist/EquipaTour-App",
+    "public": "public",
     "ignore": [
       "firebase.json",
       "**/.*",
