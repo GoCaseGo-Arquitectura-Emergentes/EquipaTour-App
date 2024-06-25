@@ -1,0 +1,13 @@
+<div class="bg-white p-4 border rounded-lg shadow-lg">
+    <p><strong>Package Name:</strong> {{tourPackage.packageName}}</p>
+    <p><strong>Available Slots:</strong> {{tourPackage.availableSlots}}</p>
+    <p><strong>Guide Name:</strong> {{tourPackage.guideName}}</p>
+    <div class="flex gap-4 items-center">
+        <button class="w-full border bg-color-1 rounded-md text-white py-1.5" (click)="setIsEnableEditPopup()">Update</button>
+        <button class="w-full border bg-color-1 rounded-md text-white py-1.5" (click)="deleteTourPackage.emit(tourPackage)">Delete</button>
+    </div>
+    
+</div>
+@if (isEnableEditPopup) {
+    <app-update-package [tourPackage]="tourPackage" (onUpdateTourPackage)="onUpdateTourPackage($event)" (setIsEnableEditPopup)="setIsEnableEditPopup()"></app-update-package>
+}

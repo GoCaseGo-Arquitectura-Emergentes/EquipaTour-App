@@ -1,0 +1,36 @@
+<section  class="popup">
+    <div class="popup-content p-[10px] md:p-[30px] bg-white p-2 border rounded-lg shadow-lg">
+        @if(!isCreatedTourPackage) {
+            <h6 class="pb-10 text-center">Create Package Tour</h6>
+            <form>
+                <div class="mb-3 flex flex-col">
+                    <mat-label class="mb-2">Package Name</mat-label>
+                    <input matInput [(ngModel)]="tourPackageForm.packageName" name="packageName" class="w-full p-2 rounded-md border" placeholder="Teresa"/>
+                </div>
+
+                <div class="mb-3 flex flex-col">
+                    <mat-label class="mb-2">Available Slots</mat-label>
+                    <input type="number" matInput [(ngModel)]="tourPackageForm.availableSlots" name="availableSlots" class="w-full p-2 rounded-md border" placeholder="Teresa"/>
+                </div>
+
+                <div class="mb-3 flex flex-col">
+                    <mat-label class="mb-2">Guide Name</mat-label>
+                    <input  matInput [(ngModel)]="tourPackageForm.guideName" name="guideName" class="w-full p-2 rounded-md border" placeholder="Teresa"/>
+                </div>
+
+
+                <div class="flex gap-[20px] items-center justify-end mt-8">
+                    <button mat-raised-button class="w-full bg-color-1 rounded-md text-white py-2.5" (click)="onSubmit()">Create</button>
+                    <button mat-raised-button class="w-full bg-color-1 rounded-md text-white py-2.5" (click)="onCloseUpdate()">Cancel</button>
+                </div>
+            </form>
+        } @else {
+            <div class="flex flex-col gap-6 items-center">
+                <h6 class="text-center">Tour Package was successfully created!</h6>
+                <div class="flex gap-[20px] items-center justify-end">
+                    <button mat-raised-button class="w-full bg-color-1 rounded-md text-white py-2.5 px-4" (click)="onCloseUpdate()">Close</button>
+                </div>
+            </div>
+        }
+    </div>
+</section>
