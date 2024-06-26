@@ -21,7 +21,7 @@ import {VehicleService} from "../../services/vehicle.service";
     MatCardImage,
     NgOptimizedImage
   ],
-  styleUrls: ['./vehicle-card.component.scss']
+  styleUrls: ['./vehicle-card.component.css']
 })
 export class VehicleCardComponent {
   @Input() vehicle: Vehicle = new Vehicle();

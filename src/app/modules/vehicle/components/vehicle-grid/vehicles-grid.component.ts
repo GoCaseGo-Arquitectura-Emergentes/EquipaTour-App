@@ -9,7 +9,7 @@ import {VehicleCardComponent} from "../vehicle-card/vehicle-card.component";
   imports: [
     VehicleCardComponent
   ],
-  styleUrls: ['./vehicles-grid.component.scss']
+  styleUrls: ['./vehicles-grid.component.css']
 })
 export class VehiclesGridComponent {
   @Input() existingVehicles: Vehicle[] = [];
