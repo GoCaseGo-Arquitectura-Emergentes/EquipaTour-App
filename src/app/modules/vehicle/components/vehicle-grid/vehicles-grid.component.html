@@ -1,0 +1,7 @@
+<div class="row">
+  @for (vehicle of existingVehicles; track $index) {
+    <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3 p-4">
+      <app-vehicle-card (deleteVeh)="deleteVehicleCheck($event)" [vehicle]="vehicle"></app-vehicle-card>
+    </div>
+  }
+</div>
