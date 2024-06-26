@@ -9,4 +9,5 @@
 
 </div>
 @if (isEnableEditPopup) {
+    <app-update-package [tourPackage]="tourPackage" (onUpdateTourPackage)="onUpdateTourPackage($event)" (setIsEnableEditPopup)="setIsEnableEditPopup()"></app-update-package>
 }

@@ -1,12 +1,12 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
 import { TourPackage } from '../../models/tour-package.models';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, NgForm } from '@angular/forms';
 import { MatFormField, MatLabel } from '@angular/material/form-field';
 import { MatInput } from '@angular/material/input';
 
 @Component({
-  selector: 'app-edit-vehicle',
+  selector: 'app-update-package',
   standalone: true,
   imports: [CommonModule, MatFormField, FormsModule, MatInput, MatLabel],
   templateUrl: './update-package.component.html',
