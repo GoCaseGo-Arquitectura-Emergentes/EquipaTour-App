@@ -2,13 +2,12 @@ import {Injectable} from '@angular/core';
 import {Observable} from "rxjs";
 import {Vehicle} from "../models/vehicle.model";
 import {HttpClient} from "@angular/common/http";
-import { environment } from "../../../../environments/environment";
 
 @Injectable({
   providedIn: 'root'
 })
 export class VehicleService {
-  private base = environment.baseUrl + 'vehicle';
+  private base = 'https://equipatour.osc-fr1.scalingo.io/api/v1/vehicle';
   constructor(private http: HttpClient) { }
 
   getAllTransportationsByAgencyId(): Observable<Vehicle[]> {
