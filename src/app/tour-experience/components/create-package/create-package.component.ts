@@ -1,14 +1,15 @@
-import { Component, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { TourPackage } from '../../models/tour-package.models';
 import { CommonModule } from '@angular/common';
-import { FormsModule, NgForm } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 import { MatFormField, MatLabel } from '@angular/material/form-field';
 import { MatInput } from '@angular/material/input';
+import {MatButton} from "@angular/material/button";
 
 @Component({
-  selector: 'app-create-package',
+  selector: 'app-edit-vehicle',
   standalone: true,
-  imports: [CommonModule, MatFormField, FormsModule, MatInput, MatLabel],
+  imports: [CommonModule, MatFormField, FormsModule, MatInput, MatLabel, MatButton],
   templateUrl: './create-package.component.html',
   styleUrl: './create-package.component.css'
 })

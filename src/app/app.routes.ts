@@ -5,6 +5,7 @@ import { HomeComponent } from './modules/home/home/home.component';
 import { TrainingsComponent } from './modules/trainings/trainings/trainings.component';
 import { authGuard } from './core/guards/auth.guard';
 import { TourPackagesComponent } from './tour-experience/pages/tour-packages/tour-packages.component';
+import {VehicleListComponent} from "./modules/vehicle/pages/vehicle-list/vehicle-list.component";
 
 export const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -12,6 +13,7 @@ export const routes: Routes = [
   { path: 'home', component: HomeComponent, canActivate: [authGuard] },
   { path: 'trainings', component: TrainingsComponent, canActivate: [authGuard] },
   { path: 'tour-packages', component: TourPackagesComponent, canActivate: [authGuard] },
+  { path: 'vehicle', component: VehicleListComponent, canActivate: [authGuard] },
   { path: '', redirectTo: '/login', pathMatch: 'full' },
   { path: '**', redirectTo: '/login' },
 ];

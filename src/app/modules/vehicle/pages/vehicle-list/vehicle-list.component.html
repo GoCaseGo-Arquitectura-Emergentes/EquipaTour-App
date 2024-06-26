@@ -1,0 +1,25 @@
+<div class="pt-20 sm:pl-48 md:pl-52 lg:pl-60 xl:pl-64">
+  <div class="d-flex justify-content-end">
+    <button class="bg-color-1 rounded-md text-white fw-bolder d-flex align-item-center p-2 ml-2" (click)="addVehicle()">
+      <mat-icon class="mr-1">add</mat-icon>
+      Add Vehicle
+    </button>
+  </div>
+  <div class="px-lg-5">
+    <div class="px-2 mt-3">
+      <mat-chip-listbox aria-label="Vehicle status selection">
+        <mat-chip-option selected (click)="getExistingVehiclesByStatus(VEHICLE_STATUS.OPERATIONAL)">Operational</mat-chip-option>
+        <mat-chip-option color="accent" (click)="getExistingVehiclesByStatus(VEHICLE_STATUS.IN_USE)">In use</mat-chip-option>
+        <mat-chip-option color="warn" (click)="getExistingVehiclesByStatus(VEHICLE_STATUS.OUT_OF_SERVICE)">Out of service</mat-chip-option>
+      </mat-chip-listbox>
+    </div>
+    <app-vehicle-grid (deleteVeh)="deleteVeh($event)" [existingVehicles]="existingVehicles"></app-vehicle-grid>
+    @if (existingVehicles.length === 0) {
+      <div class="d-flex mx-2 mx-sm-2 mx-md-3 mx-lg-5 justify-content-center">
+        <div class="alert alert-primary col-12 col-sm-12 col-md-7 col-lg-6 d-flex justify-content-center mt-3" role="alert">
+          There are not vehicles with the status <div class="fw-bolder" style="margin-left: 4px">{{selectedStatus}}</div>.
+        </div>
+      </div>
+    }
+  </div>
+</div>
