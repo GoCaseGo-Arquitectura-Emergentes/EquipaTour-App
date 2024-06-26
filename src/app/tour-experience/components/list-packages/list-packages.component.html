@@ -1,22 +1,32 @@
 <div class="flex justify-between items-center px-4 py-2 bg-white border-b">
-    <h1 class="text-xl font-bold">Tour Package Management</h1>
+  <h1 class="text-xl font-bold">Tour Package Management</h1>
 
-    <div class="relative">
-        <button (click)="setIsEnableCreatedPopup()" class="text-black focus:outline-none flex items-center border p-2 rounded-lg bg-yellow-300">
-            Add new Package
-            <i class="material-icons">add</i>
-        </button>
-    </div>
+  <div class="relative">
+    <button
+      (click)="setIsEnableCreatedPopup()"
+      class="text-black focus:outline-none flex items-center border p-2 rounded-lg bg-yellow-300"
+    >
+      Add new Package
+      <i class="material-icons">add</i>
+    </button>
+  </div>
 </div>
 
 <div class="px-4 py-2 mt-4 w-full">
-    <div class="grid grid-cols-3 gap-4">
-        <div *ngFor="let tourPackage of tourPackages">
-            <app-package [tourPackage]="tourPackage" (deleteTourPackage)="deleteTourPackage($event)" (updateTourPackage)="updateTourPackage($event)"></app-package>
-        </div>
+  <div class="grid grid-cols-3 gap-4">
+    <div *ngFor="let tourPackage of tourPackages">
+      <app-package
+        [tourPackage]="tourPackage"
+        (deleteTourPackage)="deleteTourPackage($event)"
+        (updateTourPackage)="updateTourPackage($event)"
+      ></app-package>
     </div>
+  </div>
 
-    @if(isEnableCreatedPopup) {
-        <app-create-package (createTourPackage)="createTourPackage($event)" (setIsEnableCreatedPopup)="setIsEnableCreatedPopup()"></app-create-package>
-    }
+  @if(isEnableCreatedPopup) {
+  <app-create-package
+    (createTourPackage)="createTourPackage($event)"
+    (setIsEnableCreatedPopup)="setIsEnableCreatedPopup()"
+  ></app-create-package>
+  }
 </div>

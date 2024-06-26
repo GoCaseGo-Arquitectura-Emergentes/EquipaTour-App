@@ -1,22 +1,40 @@
-<mat-card class="p-3 card-container h-100">
-  <img class="px-3 object-cover w-25 h-25"
-       mat-card-image [src]="'/images/vehicles/model' + vehicle.vehicleModel + '.jpg'"
-       [alt]="vehicle.vehicleModel+'-image'">
+<mat-card class="p-3 card-container h-full flex flex-col justify-between">
+  <img
+    class="px-3 object-cover w-full h-32 sm:h-48"
+    mat-card-image
+    [src]="'/images/vehicles/model' + vehicle.vehicleModel + '.jpg'"
+    [alt]="vehicle.vehicleModel + '-image'"
+  />
   <mat-card-content class="py-2">
-    <label class="fs-5 fw-bolder d-flex">Driver: {{vehicle.vehicleDriver}}</label> <br>
-    <label class="fs-6 d-flex">Model: <label class="fw-bolder">{{vehicle.vehicleModel}}</label></label> <br>
-    <label class="fs-6 d-flex">Capacity: <label class="fw-bolder">{{vehicle.vehicleSeats}}</label></label> <br>
-    <label class="fs-6 d-flex">Max-weight: <label class="fw-bolder">{{vehicle.vehicleWeight}} kg</label></label> <br>
+    <label class="text-lg font-bold block"
+      >Driver: {{ vehicle.vehicleDriver }}</label
+    >
+    <label class="text-md block"
+      >Model:
+      <span class="font-semibold">{{ vehicle.vehicleModel }}</span></label
+    >
+    <label class="text-md block"
+      >Capacity:
+      <span class="font-semibold">{{ vehicle.vehicleSeats }}</span></label
+    >
+    <label class="text-md block"
+      >Max-weight:
+      <span class="font-semibold">{{ vehicle.vehicleWeight }} kg</span></label
+    >
   </mat-card-content>
-  <mat-card-actions class="custom-card-actions">
-    <button class="bg-color-1 rounded-md text-white py-2.5 fw-bolder d-flex align-item-center" (click)="editVehicle()">
-      <mat-icon class="mr-1">edit</mat-icon>
+  <mat-card-actions class="flex flex-col space-x-2">
+    <button
+      class="bg-color-1 rounded-md text-white p-2 font-bold flex items-center justify-center"
+      (click)="editVehicle()"
+    >
+      <mat-icon class="mr-2">edit</mat-icon>
       Edit
     </button>
-  </mat-card-actions>
-  <mat-card-actions class="custom-card-actions">
-    <button class="bg-color-2 rounded-md text-white py-2.5 fw-bolder d-flex align-item-center" (click)="deleteVehicle()">
-      <mat-icon class="mr-1">delete</mat-icon>
+    <button
+      class="bg-color-3 rounded-md text-white p-2 font-bold flex items-center justify-center"
+      (click)="deleteVehicle()"
+    >
+      <mat-icon class="mr-2">delete</mat-icon>
       Delete
     </button>
   </mat-card-actions>

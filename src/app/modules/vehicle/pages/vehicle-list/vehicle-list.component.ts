@@ -21,7 +21,7 @@ import {MatDialog} from "@angular/material/dialog";
     VehiclesGridComponent,
     MatButton
   ],
-  styleUrls: ['./vehicle-list.component.scss']
+  styleUrls: ['./vehicle-list.component.css']
 })
 export class VehicleListComponent implements OnInit {
   existingVehicles: Vehicle[] = [];

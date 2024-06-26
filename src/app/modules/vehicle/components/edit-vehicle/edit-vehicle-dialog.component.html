@@ -1,52 +1,89 @@
 <div class="popup">
-    <div class="popup-content bg-white p-2 shadow-lg">
-      <form>
-        <h6 class="pb-10 text-center">{{ isEdit? 'Edit Vehicle': 'Create Vehicle'}}</h6>
-        <div class="mb-3 flex flex-col">
-          <mat-label class="mb-2">Driver</mat-label>
-          <input matInput [(ngModel)]="vehicle.vehicleDriver" name="vehicleDriver" class="w-full p-2 rounded-md border"/>
-        </div>
+  <div class="popup-content bg-white p-2 shadow-lg">
+    <form>
+      <h6 class="pb-10 text-center">
+        {{ isEdit ? "Edit Vehicle" : "Create Vehicle" }}
+      </h6>
+      <div class="mb-3 flex flex-col">
+        <mat-label class="mb-2">Driver</mat-label>
+        <input
+          matInput
+          [(ngModel)]="vehicle.vehicleDriver"
+          name="vehicleDriver"
+          class="w-full p-2 rounded-md border"
+        />
+      </div>
 
-        <div class="mb-3 flex flex-col">
-          <mat-label class="mb-2">Model</mat-label>
-          <mat-form-field>
-            <mat-label>Model Car</mat-label>
-            <select matNativeControl (change)="selectCar($event)">
-              <option value=""></option>
-              @for (option of modelList; track option) {
-                <option [value]="option"
-                        [selected]="vehicle.vehicleModel === option">{{ option }}</option>
-              }
-            </select>
-          </mat-form-field>
-
-          <div class="model-presentation bg-color-1">
-            @if (vehicle.vehicleModel) {
-              <img class="px-3 object-cover"
-                   mat-card-image [src]="'/images/vehicles/model' + vehicle.vehicleModel + '.jpg'"
-                   [alt]="vehicle.vehicleModel+'-image'">
-            } @else {
-              <p class="text-center">Seleccionar Modelo</p>
+      <div class="mb-3 flex flex-col">
+        <mat-label class="mb-2">Model</mat-label>
+        <mat-form-field>
+          <mat-label>Model Car</mat-label>
+          <select matNativeControl (change)="selectCar($event)">
+            <option value=""></option>
+            @for (option of modelList; track option) {
+            <option
+              [value]="option"
+              [selected]="vehicle.vehicleModel === option"
+            >
+              {{ option }}
+            </option>
             }
+          </select>
+        </mat-form-field>
 
-          </div>
+        <div class="model-presentation bg-color-1">
+          @if (vehicle.vehicleModel) {
+          <img
+            class="px-3 object-cover"
+            mat-card-image
+            [src]="'/images/vehicles/model' + vehicle.vehicleModel + '.jpg'"
+            [alt]="vehicle.vehicleModel + '-image'"
+          />
+          } @else {
+          <p class="text-center">Seleccionar Modelo</p>
+          }
         </div>
+      </div>
 
-        <div class="mb-3 flex flex-col">
-          <mat-label class="mb-2">Capacity</mat-label>
-          <input disabled="disabled" matInput [(ngModel)]="vehicle.vehicleSeats" name="vehicleSeats" class="w-full p-2 rounded-md border" type="number"/>
-        </div>
+      <div class="mb-3 flex flex-col">
+        <mat-label class="mb-2">Capacity</mat-label>
+        <input
+          disabled="disabled"
+          matInput
+          [(ngModel)]="vehicle.vehicleSeats"
+          name="vehicleSeats"
+          class="w-full p-2 rounded-md border"
+          type="number"
+        />
+      </div>
 
-        <div class="mb-3 flex flex-col">
-          <mat-label class="mb-2">Max Weight</mat-label>
-          <input disabled="disabled" matInput [(ngModel)]="vehicle.vehicleWeight" name="vehicleWeight" class="w-full p-2 rounded-md border"/>
-        </div>
+      <div class="mb-3 flex flex-col">
+        <mat-label class="mb-2">Max Weight</mat-label>
+        <input
+          disabled="disabled"
+          matInput
+          [(ngModel)]="vehicle.vehicleWeight"
+          name="vehicleWeight"
+          class="w-full p-2 rounded-md border"
+        />
+      </div>
 
-
-        <div class="flex gap-[20px] items-center justify-end mt-8">
-          <button mat-raised-button class="w-full bg-color-1 rounded-md text-white py-2.5" (click)="onSubmit()"> {{isEdit ? 'Edit':'Create'}}</button>
-          <button mat-raised-button class="w-full bg-color-1 rounded-md text-white py-2.5" (click)="onCloseUpdate()">Cancel</button>
-        </div>
-      </form>
-    </div>
+      <div class="flex gap-[20px] items-center justify-end mt-8">
+        <button
+          mat-raised-button
+          class="w-full bg-color-1 rounded-md text-white py-2.5"
+          (click)="onSubmit()"
+        >
+          {{ isEdit ? "Edit" : "Create" }}
+        </button>
+        <button
+          mat-raised-button
+          class="w-full bg-color-1 rounded-md text-white py-2.5"
+          (click)="onCloseUpdate()"
+        >
+          Cancel
+        </button>
+      </div>
+    </form>
+  </div>
 </div>
